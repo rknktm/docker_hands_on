@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\goodh\\OneDrive\\Desktop\\Calismalar\\projeler\\docker-projects\\php-mysql-wpres-drupal\\dotnet\\Dotnet.csproj",
+  "FilePath": "c:\\Users\\goodh\\OneDrive\\Desktop\\Calismalar\\projeler\\docker\\php-mysql-wpres-drupal\\dotnet\\Dotnet.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "5.0",
@@ -15619,38 +15619,38 @@
   "RootNamespace": "Dotnet",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\goodh\\OneDrive\\Desktop\\Calismalar\\projeler\\docker-projects\\php-mysql-wpres-drupal\\dotnet\\Pages\\Privacy.cshtml",
-      "TargetPath": "Pages\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\goodh\\OneDrive\\Desktop\\Calismalar\\projeler\\docker-projects\\php-mysql-wpres-drupal\\dotnet\\Pages\\Index.cshtml",
-      "TargetPath": "Pages\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\goodh\\OneDrive\\Desktop\\Calismalar\\projeler\\docker-projects\\php-mysql-wpres-drupal\\dotnet\\Pages\\Error.cshtml",
-      "TargetPath": "Pages\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\goodh\\OneDrive\\Desktop\\Calismalar\\projeler\\docker-projects\\php-mysql-wpres-drupal\\dotnet\\Pages\\_ViewStart.cshtml",
+      "FilePath": "c:\\Users\\goodh\\OneDrive\\Desktop\\Calismalar\\projeler\\docker\\php-mysql-wpres-drupal\\dotnet\\Pages\\_ViewStart.cshtml",
       "TargetPath": "Pages\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\goodh\\OneDrive\\Desktop\\Calismalar\\projeler\\docker-projects\\php-mysql-wpres-drupal\\dotnet\\Pages\\_ViewImports.cshtml",
+      "FilePath": "c:\\Users\\goodh\\OneDrive\\Desktop\\Calismalar\\projeler\\docker\\php-mysql-wpres-drupal\\dotnet\\Pages\\Error.cshtml",
+      "TargetPath": "Pages\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\goodh\\OneDrive\\Desktop\\Calismalar\\projeler\\docker\\php-mysql-wpres-drupal\\dotnet\\Pages\\Index.cshtml",
+      "TargetPath": "Pages\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\goodh\\OneDrive\\Desktop\\Calismalar\\projeler\\docker\\php-mysql-wpres-drupal\\dotnet\\Pages\\_ViewImports.cshtml",
       "TargetPath": "Pages\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\goodh\\OneDrive\\Desktop\\Calismalar\\projeler\\docker-projects\\php-mysql-wpres-drupal\\dotnet\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FilePath": "c:\\Users\\goodh\\OneDrive\\Desktop\\Calismalar\\projeler\\docker\\php-mysql-wpres-drupal\\dotnet\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\goodh\\OneDrive\\Desktop\\Calismalar\\projeler\\docker-projects\\php-mysql-wpres-drupal\\dotnet\\Pages\\Shared\\_Layout.cshtml",
+      "FilePath": "c:\\Users\\goodh\\OneDrive\\Desktop\\Calismalar\\projeler\\docker\\php-mysql-wpres-drupal\\dotnet\\Pages\\Shared\\_Layout.cshtml",
       "TargetPath": "Pages\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\goodh\\OneDrive\\Desktop\\Calismalar\\projeler\\docker\\php-mysql-wpres-drupal\\dotnet\\Pages\\Privacy.cshtml",
+      "TargetPath": "Pages\\Privacy.cshtml",
       "FileKind": "mvc"
     }
   ],
