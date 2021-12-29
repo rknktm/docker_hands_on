@@ -1,0 +1,4 @@
+FROM nginx
+COPY ./web2 /usr/share/nginx/html
+VOLUME /kiler
+CMD [ "nginx", "-g daemon off ;" ]

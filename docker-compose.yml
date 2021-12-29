@@ -1,0 +1,45 @@
+version: "2"
+services:
+    db:
+      image: mysql
+      restart: always
+      volumes:
+          - data:/var/lib/mysql
+      networks:
+          - networkbr
+      secrets:
+          - db-user
+          - db-password
+      environment:
+          MYSQL_USER_FILE: /run/secrets/db-user
+          MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db-password
+          MYSQL_PASSWORD_FILE: /run/secrets/db-password
+          MYSQL_DATABASE: wp
+
+    wp:
+      depends_on: 
+          - db
+      image: wordpress
+      restart: always
+      secrets:
+          - db-user
+          - db-password
+      environment:
+        WORDPRESS_DB_HOST: db:3306
+        WORDPRESS_DB_PASSWORD_FILE: /run/secrets/db-password
+        WORDPRESS_DB_USER_FILE: /run/secrets/db-user
+      networks:
+          - networkbr
+      ports: 
+          - "9080:80"
+
+networks:
+    networkbr:
+      driver: bridge
+volumes: 
+    data:
+secrets:
+    db-user:
+      file: ./db-user.txt
+    db-password:
+      file: ./db-password.txt
