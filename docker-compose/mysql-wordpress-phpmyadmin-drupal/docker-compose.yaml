@@ -1,0 +1,75 @@
+version: '3.8'
+services:
+# create MySQL database
+  database:
+    image: mysql:5.7
+    restart: always
+    volumes:
+      - db_data:/var/lib/mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD : rkn1234
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: rkn 
+      MYSQL_PASSWORD: rkn1234
+    networks:
+      - datanet
+# create Wordpress
+  wordpress:
+    depends_on:
+      - database
+    image: wordpress:latest
+    ports:
+      - "8080:80"
+    volumes:
+       - db_data2:/var/www/html
+    environment:
+      WORDPRESS_DB_HOST: database:3306
+      WORDPRESS_DB_USER: rkn
+      WORDPRESS_DB_PASSWORD: rkn1234
+    networks:
+      - datanet 
+# create phpMyAdmin
+  phpmyadmin:
+    depends_on:
+      - database
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - "7080:80"
+    environment:
+      PMA_HOST: database
+      MYSQL_ROOT_PASSWORD: rkn1234
+    networks:
+      - datanet
+# create drupal service
+  drupal:
+    depends_on:
+      - database
+    image: drupal
+    restart: always
+    ports:
+      - "9080:80"
+    volumes:
+      - var/www/html/sites
+      - var/www/html/profiles
+      - var/www/html/themes
+      - var/www/html/modules
+      - var/www/private
+
+    environment:
+      MYSQL_DATABASE: drupal
+      MYSQL_USER: rkn
+      MYSQL_PASSWORD: rkn1234
+    networks:
+      - datanet
+  
+
+volumes:
+  db_data:
+  db_data2:
+networks:
+  datanet:
+    driver: bridge
+
+
+

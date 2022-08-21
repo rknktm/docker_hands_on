@@ -1,0 +1,37 @@
+version: "3.8"
+
+services:
+  database:
+    image: mysql:5.7
+    restart: always
+    volumes:
+      - datas:/var/lib/mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD : admin1234
+      MYSQL_DATABASE: rknpress
+      MYSQL_USER: rkn 
+      MYSQL_PASSWORD: rkn1234
+    networks:
+      - wpnet
+
+  wordpress:
+    depends_on:
+      - database
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "80:80"
+    environment:
+      WORDPRESS_DB_HOST: database:3306
+      WORDPRESS_DB_USER: rkn
+      WORDPRESS_DB_PASSWORD: rkn1234
+      WORDPRESS_DB_NAME: rknpress
+    networks:
+      - wpnet
+
+  
+volumes:
+  datas:
+networks:
+  wpnet:
+    driver: bridge

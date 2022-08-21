@@ -1,0 +1,3 @@
+FROM nginx:latest
+VOLUME /data2
+COPY ./web2/index.html /usr/share/nginx/html

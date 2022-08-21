@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  web1:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./web1:/usr/share/nginx/html
+      - data1:/tmp
+    networks:
+      - webnet
+  
+
+  web2:
+    build: .
+    ports:
+      - "8090:80"
+    networks: 
+      - webnet
+    
+volumes:
+  data1:
+networks:
+  webnet:
+    driver: bridge

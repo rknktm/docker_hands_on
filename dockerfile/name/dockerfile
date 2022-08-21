@@ -1,0 +1,5 @@
+FROM nginx:latest
+WORKDIR /usr/share/nginx/html
+COPY . .
+ENV name="ERKAN"
+CMD [ "/bin/bash", "-c" sed -e "s/user/$name/" user.html> a.html ;sed -e "s/hostname/$HOSTNAME/" a.html > index.html;nginx -g 'daemon off ;'
