@@ -1,0 +1,50 @@
+version: "3.8"
+services:
+    db:
+      image: mysql:5.7
+      restart: always
+      volumes:
+          - data:/var/lib/mysql
+      networks:
+          - networkbr
+      secrets:
+          - db-user
+          - db-password
+      environment:
+          MYSQL_USER_FILE: /run/secrets/db-user
+          MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db-password
+          MYSQL_PASSWORD_FILE: /run/secrets/db-password
+          MYSQL_DATABASE: wp
+
+    wp:
+      depends_on: 
+          - db
+      image: wordpress
+      restart: always
+      secrets:
+          - db-user
+          - db-password
+      environment:
+        WORDPRESS_DB_HOST: db:3306
+        WORDPRESS_DB_PASSWORD_FILE: /run/secrets/db-password
+        WORDPRESS_DB_USER_FILE: /run/secrets/db-user
+      networks:
+          - networkbr
+      ports: 
+          - "8080:80"
+      deploy:
+        replicas: 1
+        update_config:
+          parallelism: 2
+          delay: 10s
+
+networks:
+    networkbr:
+      driver: overlay
+volumes: 
+    data:
+secrets:
+    db-user:
+      file: ./user.txt
+    db-password:
+      file: ./password.txt

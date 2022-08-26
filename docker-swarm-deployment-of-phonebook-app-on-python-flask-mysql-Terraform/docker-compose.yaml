@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+  database:
+      image: mysql:5.7
+      container_name: mysql1
+      environment:
+            MYSQL_ROOT_PASSWORD: 123456789
+            MYSQL_DATABASE: db
+            MYSQL_USER: rkn
+            MYSQL_PASSWORD: rkn1234
+      networks:
+        - rknnet
+
+
+  myapp:
+      build: .
+      container_name: myapp1
+      restart: always
+      depends_on: 
+        - database
+      ports: 
+        - "80:80"
+      networks:
+        - rknnet
+
+
+networks:
+  rknnet:
+
+  
